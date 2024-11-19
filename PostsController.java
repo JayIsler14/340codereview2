@@ -18,18 +18,18 @@ public class PostsController {
     @GetMapping("/all")
     public String getAllPosts(Model model) {
         model.addAttribute("postList", PostsService.getAllPosts());
-        return "student";
+        return "posts-list";
     }
 
     @GetMapping("/{postId}")
     public String getOnePost(@PathVariable int postId, Model model) {
         model.addAttribute("post", PostsService.getPostById(postId));
-        return "student";
+        return "posts-details";
     }
 
     @GetMapping("/createForm")
     public String showCreateForm(){
-        return "student";
+        return "posts-new";
     }
 
     @PostMapping("/new")
