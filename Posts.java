@@ -14,23 +14,21 @@ public class Posts {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int postId;
 
-    @ManyToOne
-    @JoinColumn(name = "s_id")
-    private Student student;
+
 
     @Column(nullable = false)
     private String postText;
 
 
 
-    public Posts(int postId, Student student, String postText) {
+    public Posts(int postId, String postText) {
         this.postId = postId;
-        this.student = student;
+
         this.postText = postText;
     }
 
-    public Posts(Student student, String postText) {
-        this.student = student;
+    public Posts( String postText) {
+
         this.postText = postText;
     }
 
@@ -46,13 +44,7 @@ public class Posts {
         this.postId = postId;
     }
 
-    public Student getStudent() {
-        return student;
-    }
 
-    public void setStudent(Student student) {
-        this.student = student;
-    }
 
     public String getPostText() {
         return postText;
